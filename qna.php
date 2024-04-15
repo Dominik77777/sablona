@@ -5,9 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Moja stránka</title>
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/accordion.css">
-    <link rel="stylesheet" href="css/banner.css">
+    <?php
+    include_once "functions.php";
+    getCSS();
+    ?>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
@@ -18,9 +19,9 @@
   <nav class="main-nav">
     <ul class="main-menu" id="main-menu container">
       <li><a href="index.php">Domov</a></li>
-      <li><a href="portfolio.html">Portfólio</a></li>
-      <li><a href="qna.html">Q&A</a></li>
-      <li><a href="kontakt.html">Kontakt</a></li>
+      <li><a href="portfolio.php">Portfólio</a></li>
+      <li><a href="qna.php">Q&A</a></li>
+      <li><a href="kontakt.php">Kontakt</a></li>
     </ul>
     <a class="hamburger" id="hamburger">
       <i class="fa fa-bars"></i>
@@ -41,13 +42,13 @@
       </div>
     </section>
       <section class="container">
-          <?php include "otazky.php"; ?>
-          <?php for ($i = 0; $i < count($otazky); $i++) { ?>
-              <div class="accordion">
-                  <div class="question"><?php echo $otazky[$i]; ?></div>
-                  <div class="answer"><?php echo $odpovede[$i]; ?></div>
-              </div>
-          <?php } ?>
+          <?php
+          include_once "classes/QnA.php";
+          use otazkyodpovede\QnA;
+
+          $qna = new QnA();
+          $qna->getQna();
+          ?>
       </section>
       </section>
   </div>

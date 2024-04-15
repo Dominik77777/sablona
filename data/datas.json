@@ -1,0 +1,11 @@
+{
+  "stranky": {
+    "index": ["css/style.css", "css/slider.css"],
+    "portfolio": ["css/style.css", "css/banner.css", "css/portfolio.css"],
+    "qna": ["css/style.css", "css/banner.css", "css/accordion.css"],
+    "kontakt": ["css/style.css", "css/banner.css", "css/form.css"],
+    "thankyou": ["css/style.css", "css/banner.css", "css/form.css"]
+  },
+  "otazka": [],
+  "odpoved": []
+}
